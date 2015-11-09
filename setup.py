@@ -10,6 +10,8 @@ with open('README.rst') as readme_file:
     readme = readme_file.read()
 
 requirements = [
+    'SQLAlchemy==1.0.9',
+    'pyuploadcare==1.3.3',
 ]
 
 test_requirements = [

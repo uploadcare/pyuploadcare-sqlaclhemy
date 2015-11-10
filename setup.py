@@ -5,6 +5,8 @@ try:
 except ImportError:
     from distutils.core import setup
 
+from pyuploadcare_sqlalchemy import __version__
+
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -21,7 +23,7 @@ test_requirements = [
 
 setup(
     name="pyuploadcare-sqlalchemy",
-    version="0.0.1",
+    version=__version__,
 
     author="Uploadcare LLC",
     author_email="hello@uploadcare.com",

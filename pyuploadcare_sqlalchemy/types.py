@@ -7,7 +7,7 @@ from sqlalchemy.types import TypeDecorator, UnicodeText
 from pyuploadcare.api_resources import File, FileGroup, RE_EFFECTS
 from pyuploadcare.exceptions import InvalidRequestError
 
-__ALL__ = ('FileType', 'ImageType')
+__ALL__ = ('FileType', 'ImageType', 'FileGroupType')
 
 COMPILED_EFFECTS_RE = re.compile('^{0}$'.format(RE_EFFECTS))
 

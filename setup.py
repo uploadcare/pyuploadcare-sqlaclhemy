@@ -20,7 +20,7 @@ test_requirements = [
 
 setup(
     name="pyuploadcare-sqlalchemy",
-    version='0.1',
+    version='0.5',
 
     author="Uploadcare LLC",
     author_email="hello@uploadcare.com",

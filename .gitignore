@@ -43,5 +43,5 @@ output/*/index.html
 docs/_build
 
 # Other
-db.sqlite3
+db.sqlite
 venv

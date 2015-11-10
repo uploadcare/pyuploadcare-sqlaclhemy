@@ -9,7 +9,7 @@ help:
 	@echo "install - install the package to the active Python's site-packages"
 	@echo "authors - update list of authors"
 	@echo "test - run tests for current version of python"
-	@echo "test-all - run tests for all supported versions"
+	@echo "run_example - istall and run example"
 
 clean: clean-build clean-pyc
 
@@ -43,5 +43,7 @@ authors:
 test:
 	python runtests.py
 
-test-all:
-	tox
+run_example:
+	pip install Flask
+	python setup.py develop
+	python example/main.py

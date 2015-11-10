@@ -1,21 +1,15 @@
-PyUploadcare-SqlAlchemy
+Pyuploadcare-SqlAlchemy
 =======================
 
 .. image:: https://img.shields.io/pypi/v/pyuploadcare-sqlalchemy.svg
     :target: https://pypi.python.org/pypi/pyuploadcare-sqlalchemy
     :alt: Latest PyPI version
 
-.. image:: https://travis-ci.org/zerc/pyuploadcare-sqlalchemy.svg?branch=master
-    :target: https://travis-ci.org/zerc/pyuploadcare-sqlalchemy
+.. image:: https://travis-ci.org/uploadcare/pyuploadcare-sqlalchemy.svg?branch=master
+    :target: https://travis-ci.org/uploadcare/pyuploadcare-sqlalchemy
     :alt: Build status
 
 Custom fields types for SqlAlchemy which integrated with Uploadcare service.
-
-Usage
------
-
-TODO
-
 
 Installation
 ------------
@@ -24,18 +18,37 @@ Installation
 
     $ pip install pyuploadcare-sqlalchemy
 
+Usage
+-----
+
+This package similar to ``pyuploadcare.dj`` but for ``SqlAclhemy`` instead of Django's ORM. It stores Uploadcare CDN links on database side and build a ``File`` (or ``FileGroup``) object on python's side e.g then you can easily use it in yours templates.
+
+Pyuploadcare-SqlAlchemy provides next fields types:
+
+* ``FileType``
+* ``FileGroupType``
+* ``ImageType`` - Provides syntax sugar when working with images - ``effects`` - you can set default effects according by `CDN API <https://uploadcare.com/documentation/cdn/#image-operations>`_ which be applied to uploaded image.
+
+Also for getting started you can look at `simplest example <https://github.com/uploadcare/pyuploadcare-sqlalchemy/tree/master/example>`_.
+
+For install it use command:
+
+.. code:: bash
+
+    $ make run_example
+
 
 Contributing
 ------------
 
-1. Fork the `pyuploadcare-sqlalchemy` repo on GitHub.
+1. Fork the ``pyuploadcare-sqlalchemy`` repo on GitHub.
 2. Clone your fork locally:
 
 .. code:: bash
 
     $ git clone git@github.com:your_name_here/pyuploadcare-sqlalchemy.git
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development:
+3. Install your local copy into a virtualenv. Assuming you have ``virtualenvwrapper`` installed, this is how you set up your fork for local development:
 
 .. code:: bash
 
@@ -55,7 +68,8 @@ Contributing
 
 .. code:: bash
 
-    $ make test-all
+    $ pip install tox
+    $ tox
 
 6. Commit your changes and push your branch to GitHub:
 

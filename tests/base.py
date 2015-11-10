@@ -1,5 +1,8 @@
 # coding: utf-8
-from unittest import TestCase
+try:
+    import unittest2 as unittest
+except ImportError:
+    import unittest
 
 from sqlalchemy import create_engine, Table, Column, MetaData
 
@@ -15,7 +18,7 @@ def create_table(name, **kwargs):
     return table
 
 
-class TableBasedTestCase(TestCase):
+class TableBasedTestCase(unittest.TestCase):
     cols = None
 
     @classmethod

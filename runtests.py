@@ -1,7 +1,11 @@
 # coding: utf-8
 import os
 import sys
-import unittest
+
+try:
+    import unittest2 as unittest
+except ImportError:
+    import unittest
 
 TEST_DIR = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),

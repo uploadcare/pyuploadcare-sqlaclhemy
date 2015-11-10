@@ -1,11 +1,21 @@
+sudo: false
 language: python
-
 python:
-  - "3.4"
-  - "3"
-  - "2.7"
-  - "2.6"
-
-install: pip install -r requirements.txt
-
-script: tox
+  - 2.6
+  - 2.7
+  - 3.2
+  - 3.3
+  - 3.4
+env:
+  matrix:
+    - ALCHEMY=0.7
+    - ALCHEMY=0.9
+    - ALCHEMY=1.0
+cache:
+  directories:
+    - $HOME/.cache/pip
+install:
+  - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install unittest2; fi
+  - pip install SQLAlchemy~=$ALCHEMY
+  - python setup.py install
+script: python runtests.py

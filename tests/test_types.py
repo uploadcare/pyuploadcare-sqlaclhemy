@@ -11,19 +11,19 @@ from pyuploadcare_sqlalchemy import FileType, ImageType, FileGroupType
 
 from tests.base import TableBasedTestCase
 
-EMPTY_VALUES = (u'', None)
+EMPTY_VALUES = ('', None)
 
 
 class FileTypeTestCase(TableBasedTestCase):
     cols = dict(file=FileType())
 
-    valid_uuid = u'ebff57dd-6f79-427b-9b43-e7109f055666'
+    valid_uuid = 'ebff57dd-6f79-427b-9b43-e7109f055666'
 
     def test_invalid_uuid(self):
         self.assertRaisesRegexp(StatementError,
                                 "Couldn't find UUID",
                                 self.connection.execute,
-                                self.insert, file=u'invalid')
+                                self.insert, file='invalid')
 
     def test_empty_values(self):
         for i, v in enumerate(EMPTY_VALUES, 1):
@@ -55,13 +55,13 @@ class FileTypeTestCase(TableBasedTestCase):
 class FileGroupTypeTestCase(FileTypeTestCase):
     cols = dict(file=FileGroupType())
 
-    valid_uuid = u'ebff57dd-6f79-427b-9b43-e7109f055666~12'
+    valid_uuid = 'ebff57dd-6f79-427b-9b43-e7109f055666~12'
 
     def test_invalid_uuid(self):
         self.assertRaisesRegexp(StatementError,
                                 "Couldn't find group id",
                                 self.connection.execute,
-                                self.insert, file=u'invalid')
+                                self.insert, file='invalid')
 
     @mock.patch('pyuploadcare_sqlalchemy.types.FileGroup.is_stored')
     @mock.patch('pyuploadcare_sqlalchemy.types.FileGroup.store')

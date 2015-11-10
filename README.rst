@@ -1,4 +1,4 @@
-Pyuploadcare-SqlAlchemy
+Pyuploadcare-Sqlalchemy
 =======================
 
 .. image:: https://img.shields.io/pypi/v/pyuploadcare-sqlalchemy.svg
@@ -21,17 +21,17 @@ Installation
 Usage
 -----
 
-This package similar to ``pyuploadcare.dj`` but for ``SqlAclhemy`` instead of Django's ORM. It stores Uploadcare CDN links on database side and build a ``File`` (or ``FileGroup``) object on python's side e.g then you can easily use it in yours templates.
+This package similar to ``pyuploadcare.dj`` but for ``Sqlalchemy`` instead of Django's ORM. It stores Uploadcare CDN links on database's side and builds a object of ``File`` (or ``FileGroup``) on python's side (e.g you can easily use it in yours templates).
 
-Pyuploadcare-SqlAlchemy provides next fields types:
+Fields types:
 
 * ``FileType``
 * ``FileGroupType``
-* ``ImageType`` - Provides syntax sugar when working with images - ``effects`` - you can set default effects according by `CDN API <https://uploadcare.com/documentation/cdn/#image-operations>`_ which be applied to uploaded image.
+* ``ImageType`` - Provides syntax sugar when working with images - ``effects`` - you can set default effects according by `CDN API <https://uploadcare.com/documentation/cdn/#image-operations>`_ which will be applied to uploaded image.
 
-Also for getting started you can look at `simplest example <https://github.com/uploadcare/pyuploadcare-sqlalchemy/tree/master/example>`_.
+Also for getting started you can look at this `simplest example <https://github.com/uploadcare/pyuploadcare-sqlalchemy/tree/master/example>`_.
 
-For install it use command:
+For install it use a command:
 
 .. code:: bash
 
